@@ -1,0 +1,19 @@
+from shaper import SubgoalRS
+from shaper.aggregator.subgoal_based import DynamicTrajectoryAggregation
+from src.agents.dta import is_success
+from src.agents.shaped import ShapedAgent
+from src.achievers import PinballAchiever
+
+
+class SRSAgent(ShapedAgent):
+    def _create_reward_shaping(self, env):
+        achiever = PinballAchiever(
+            self.config["shaping"]["range"],
+            self.subgoals
+        )
+        aggregator = DynamicTrajectoryAggregation(achiever, is_success)
+        return SubgoalRS(
+            self.config["agent"]["gamma"],
+            self.config["shaping"]["eta"],
+            aggregator
+        )

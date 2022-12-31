@@ -1,0 +1,29 @@
+{
+    "setting": {
+        "visual": false,
+        "seed": 0,
+        "out_dir": "out/srs_human_v3",
+        "nepisodes": 250,
+        "nruns": 100,
+        "parallel": true,
+        "nprocesses": 32
+    },
+    "env": {
+        "id": "Pinball-Subgoal-v0",
+        "model": null
+    },
+    "agent": {
+        "name": "SRSAgent",
+        "raw_agent": "ActorCriticAgent",
+        "basis_order": 3,
+        "epsilon": 0.01,
+        "gamma": 0.99,
+        "lr_theta": 0.001,
+        "lr_q": 0.001
+    },
+    "shaping":{
+        "range": 0.04,
+        "eta": 1000,
+        "subg_path": "in/subgoals/human_subgoals.csv"
+    }
+}

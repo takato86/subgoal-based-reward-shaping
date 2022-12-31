@@ -1,0 +1,33 @@
+{
+    "setting": {
+        "visual": false,
+        "seed": 0,
+        "out_dir": "out/test",
+        "nepisodes": 1,
+        "nruns": 1,
+        "parallel": false,
+        "nprocesses": 1
+    },
+    "env": {
+        "id": "Pinball-Subgoal-v0",
+        "model": null
+    },
+    "agent": {
+        "name": "NaiveRSAgent",
+        "raw_agent": "ActorCriticAgent",
+        "basis_order": 3,
+        "epsilon": 0.01,
+        "gamma": 0.99,
+        "lr_theta": 0.001,
+        "lr_q": 0.001
+    },
+    "shaping":{
+        "vid": "table",
+        "aggr_id": "dta",
+        "range": 0.04,
+        "subg_path": "in/subgoals/human_subgoals.csv",
+        "eta": 10000,
+        "rho": 0.01,
+        "k": 3
+    }
+}
