@@ -47,13 +47,6 @@ def test(test_env, agent, normalizer, pipeline, num_test_episodes, max_ep_len):
 def learn(env_fn, pipeline, test_pipeline, replay_buffer_fn, epochs, steps_per_epoch, start_steps, update_after,
           update_every, num_test_episodes, max_ep_len, gamma, epsilon, actor_lr, critic_lr, polyak, l2_action,
           noise_scale, batch_size, norm_clip, norm_eps, clip_return, is_pos_return, logdir=None, video=False):
-    torch.backends.cudnn.benchmark = True
-    torch.autograd.detect_anomaly = False
-    torch.autograd.set_detect_anomaly = False
-    torch.autograd.profiler.profile = False
-    torch.autograd.profiler.emit_nvtx = False
-    torch.autograd.gradcheck = False
-    torch.autograd.gradgradcheck = False
     env = env_fn()
     test_env = env
 
@@ -82,28 +75,30 @@ def learn(env_fn, pipeline, test_pipeline, replay_buffer_fn, epochs, steps_per_e
             n_o = normalizer(o)
             a = agent.act(n_o, noise_scale, epsilon)
         else:
-            normalizer.sync(o)
             a = env.action_space.sample()
 
         f_o2, r, d, info = env.step(a)
         o, a, r, o2, d, info = pipeline.transform(f_o, a, r, f_o2, d, info)
         replay_buffer.store(o, a, r, o2, d, info)
-        f_o, o = f_o2.copy(), o2.copy()
+        f_o = f_o2.copy()
+        o = o2.copy()
         ep_len, ep_ret = ep_len + 1, ep_ret + r
 
         # End of trajectory handling
         if d or (ep_len == max_ep_len):
+            # logger.info(ep_len, ep_ret)
             num_episodes += 1
-            # is_succ = bool(info["is_success"])
-            # n_subgs = info["subgoal"]
-            # avg_ep_ret, avg_is_succ, avg_subgs = mpi_avg(ep_ret), mpi_avg(is_succ), mpi_avg(n_subgs)
+            is_succ = bool(info["is_success"])
+            n_subgs = info["subgoal"]
+            avg_ep_ret, avg_is_succ, avg_subgs = mpi_avg(ep_ret), mpi_avg(is_succ), mpi_avg(n_subgs)
 
-            # if proc_id() == 0:
-            #     writer.add_scalar("Train/return", scalar_value=avg_ep_ret, global_step=num_episodes)
-            #     writer.add_scalar("Train/succ_rate", scalar_value=avg_is_succ, global_step=num_episodes)
-            #     writer.add_scalar("Train/n_subgs", scalar_value=avg_subgs, global_step=num_episodes)
+            if proc_id() == 0:
+                writer.add_scalar("Train/return", scalar_value=avg_ep_ret, global_step=num_episodes)
+                writer.add_scalar("Train/succ_rate", scalar_value=avg_is_succ, global_step=num_episodes)
+                writer.add_scalar("Train/n_subgs", scalar_value=avg_subgs, global_step=num_episodes)
 
             f_o, ep_ret, ep_len, is_succ = env.reset(), 0, 0, False
+            logger.debug("train reset initial obs: {}".format(o))
             o, _, r, _,  d, _ = pipeline.transform(f_o, None, 0, None, False, None)
 
         # Update handling
@@ -111,12 +106,11 @@ def learn(env_fn, pipeline, test_pipeline, replay_buffer_fn, epochs, steps_per_e
             basis = (i - update_after) // update_every
             for j in range(update_every):
                 batch = replay_buffer.sample_batch(batch_size=batch_size)
-                batch["obs"] = normalizer.batch(batch["obs"])
-                batch["obs2"] = normalizer.batch(batch["obs2"])
+                batch["obs"] = normalizer(batch["obs"])
+                batch["obs2"] = normalizer(batch["obs2"])
                 loss_q, loss_pi, max_q = agent.update(batch)
 
                 if (basis + j) % steps_per_epoch == 0:
-                    normalizer.sync(torch.cat((batch["obs"], batch["obs2"]), 0))
                     n_records = (basis + j) // steps_per_epoch
                     avg_loss_q, avg_loss_pi, avg_max_q = mpi_avg(loss_q), mpi_avg(loss_pi), mpi_avg(max_q)
 
