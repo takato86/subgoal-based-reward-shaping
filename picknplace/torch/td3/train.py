@@ -1,13 +1,13 @@
 import logging
 import os
 from datetime import datetime
-from pdrl.experiments.pick_and_place.pipeline import create_pipeline
-from pdrl.experiments.pick_and_place.pipeline import create_test_pipeline
-from pdrl.torch.td3.learn import learn
-from pdrl.torch.ddpg.replay_memory import create_replay_buffer_fn
-from pdrl.transform.shaping import create_shaper
-from pdrl.utils.mpi import proc_id
-from pdrl.utils.file_handler import prep_dir
+from picknplace.experiments.pick_and_place.pipeline import create_pipeline
+from picknplace.experiments.pick_and_place.pipeline import create_test_pipeline
+from picknplace.torch.td3.learn import learn
+from picknplace.torch.ddpg.replay_memory import create_replay_buffer_fn
+from picknplace.transform.shaping import create_shaper
+from picknplace.utils.mpi import proc_id
+from picknplace.utils.file_handler import prep_dir
 
 
 logger = logging.getLogger()
@@ -47,9 +47,9 @@ def train(env_fn, configs):
     }
 
     if configs["debug"]:
-        dir_path = "runs/debug"
+        dir_path = "picknplace/runs/debug"
     else:
-        dir_path = "runs/train"
+        dir_path = "picknplace/runs/train"
 
     start_at = datetime.now()
 

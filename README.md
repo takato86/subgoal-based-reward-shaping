@@ -13,19 +13,19 @@ You can run a learning agent in each domain.
 ## Navigation in a four-room domain
 
 ```
-python -m fourroom --config=in/configs/fourooms.ini
+python -m fourroom --config=fourroom/in/configs/fourooms.ini
 ```
 
 ## Navigation in a pinball domain
 
 ```
-python -m pinball --config=in/configs/pinball.ini
+python -m pinball --config=pinball/in/configs/pinball.ini
 ```
 
 ## Fetch robot picks and places
 
 ```
-python -m picknplace --config=in/config/picknplace.ini
+mpiexec -n 8 python -m picknplace --config=picknplace/in/configs/picknplace.ini
 ```
 
 # Analysis

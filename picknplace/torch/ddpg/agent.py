@@ -3,10 +3,10 @@ import torch
 from torch.optim import Adam
 import copy
 import numpy as np
-from pdrl.utils.constants import device
-from pdrl.torch.agent import Agent
-from pdrl.torch.ddpg.network import ActorCritic
-from pdrl.utils.mpi_torch import mpi_avg_grad, sync_params
+from picknplace.utils.constants import device
+from picknplace.torch.agent import Agent
+from picknplace.torch.ddpg.network import ActorCritic
+from picknplace.utils.mpi_torch import mpi_avg_grad, sync_params
 
 
 class DDPGAgent(Agent):

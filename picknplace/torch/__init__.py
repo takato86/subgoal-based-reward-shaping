@@ -1,9 +1,9 @@
-from pdrl.torch.td3.train import train as train_td3
-from pdrl.torch.td3.optimize import optimize_hyparams as optimize_td3
-from pdrl.torch.ddpg.train import train as train_ddpg
-from pdrl.torch.ddpg.optimize import optimize_hyparams as optimize_ddpg
-from pdrl.torch.ddpg_rnd.train import train as train_ddpg_rnd
-from pdrl.torch.ddpg_rnd.optimize import optimize_hyparams as optimize_ddpg_rnd
+from picknplace.torch.td3.train import train as train_td3
+from picknplace.torch.td3.optimize import optimize_hyparams as optimize_td3
+from picknplace.torch.ddpg.train import train as train_ddpg
+from picknplace.torch.ddpg.optimize import optimize_hyparams as optimize_ddpg
+from picknplace.torch.ddpg_rnd.train import train as train_ddpg_rnd
+from picknplace.torch.ddpg_rnd.optimize import optimize_hyparams as optimize_ddpg_rnd
 
 
 TRAIN_FNS = {

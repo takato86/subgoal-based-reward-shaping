@@ -1,6 +1,6 @@
 import logging
 import torch
-from pdrl.utils.mpi import proc_id
+from picknplace.utils.mpi import proc_id
 
 logger = logging.getLogger()
 

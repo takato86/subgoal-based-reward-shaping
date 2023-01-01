@@ -4,12 +4,12 @@ from statistics import mean
 from gym.wrappers.record_video import RecordVideo
 from tqdm import tqdm
 from torch.utils.tensorboard import SummaryWriter
-from pdrl.torch.ddpg_rnd.replay_memory import DynamicShapingReplayBuffer
-from pdrl.utils.constants import device
-from pdrl.torch.ddpg.agent import DDPGAgent
-from pdrl.torch.ddpg_rnd.agent import RNDAgent
-from pdrl.torch.normalizer import Zscorer
-from pdrl.utils.mpi import mpi_avg, num_procs, proc_id
+from picknplace.torch.ddpg_rnd.replay_memory import DynamicShapingReplayBuffer
+from picknplace.utils.constants import device
+from picknplace.torch.ddpg.agent import DDPGAgent
+from picknplace.torch.ddpg_rnd.agent import RNDAgent
+from picknplace.torch.normalizer import Zscorer
+from picknplace.utils.mpi import mpi_avg, num_procs, proc_id
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)

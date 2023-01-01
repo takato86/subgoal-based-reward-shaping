@@ -4,8 +4,8 @@ import gym
 import gym_m2s
 import torch
 import numpy as np
-from pdrl.torch import TRAIN_FNS, OPTIMIZE_FNS
-from pdrl.utils.config import load_config
+from picknplace.torch import TRAIN_FNS, OPTIMIZE_FNS
+from picknplace.utils.config import load_config
 import random
 
 

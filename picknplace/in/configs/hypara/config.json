@@ -1,0 +1,35 @@
+{
+    "device": "cuda:0",
+    "env_id": "SingleFetchPickAndPlace-v3",
+    "seed": 123,
+    "alg": "ddpg_rnd",
+    "eval_params": {
+        "num_test_episodes": 10
+    },
+    "hypara_optimization_params": {
+        "n_trials": 10
+    },
+    "training_params": {
+        "nruns": 1,
+        "start_steps": 257,
+        "steps_per_epoch": 200,
+        "epochs": 1000,
+        "update_after": 256,
+        "update_every": 50,
+        "max_ep_len": 50
+    },
+    "agent_params": {
+        "norm_clip": 5,
+        "norm_eps": 0.01,
+        "clip_return": 100,
+        "is_pos_return": true
+    },
+    "env_params": {
+        "initial_goal_seed": 10
+    },
+    "shaping_method": "dta",
+    "subgoal_type": "human",
+    "achiever_params": {
+        "_range": [0.07, 0.07, 0.07, 0.005, 0.005]
+    }
+}

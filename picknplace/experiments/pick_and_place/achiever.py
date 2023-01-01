@@ -2,7 +2,7 @@ import logging
 import numpy as np
 from shaper.achiever import AbstractAchiever
 
-from pdrl.transform.pipeline import Step
+from picknplace.transform.pipeline import Step
 
 
 logger = logging.getLogger(__name__)

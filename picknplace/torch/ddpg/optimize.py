@@ -1,15 +1,15 @@
 import logging
 import optuna
-from pdrl.experiments.pick_and_place.pipeline import create_pipeline, create_test_pipeline
-from pdrl.experiments.pick_and_place.sampler import sample_shaping_params
-from pdrl.torch.ddpg.learn import learn
+from picknplace.experiments.pick_and_place.pipeline import create_pipeline, create_test_pipeline
+from picknplace.experiments.pick_and_place.sampler import sample_shaping_params
+from picknplace.torch.ddpg.learn import learn
 import mlflow
 from datetime import datetime
-from pdrl.torch.ddpg.replay_memory import create_replay_buffer_fn
-from pdrl.transform.shaping import create_shaper
+from picknplace.torch.ddpg.replay_memory import create_replay_buffer_fn
+from picknplace.transform.shaping import create_shaper
 import torch
 
-from pdrl.utils.constants import set_device
+from picknplace.utils.constants import set_device
 
 
 logger = logging.getLogger(__name__)
@@ -72,7 +72,7 @@ def optimize_hyparams(env_fn, configs):
             "pipeline": pipeline,
             "test_pipeline": test_pipeline,
             "replay_buffer_fn": replay_buffer_fn,
-            "logdir": "runs/optimize/" + str(datetime.now()),
+            "logdir": "picknplace/runs/optimize/" + str(datetime.now()),
             "norm_clip": configs["agent_params"]["norm_clip"],
             "norm_eps": configs["agent_params"]["norm_eps"],
             "clip_return": configs["agent_params"]["clip_return"],

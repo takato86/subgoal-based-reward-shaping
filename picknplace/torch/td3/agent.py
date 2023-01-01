@@ -3,9 +3,9 @@ import numpy as np
 import torch
 from torch.optim import Adam
 import copy
-from pdrl.torch.agent import Agent
-from pdrl.torch.ddpg.agent import DDPGAgent
-from pdrl.utils.mpi_torch import mpi_avg_grad
+from picknplace.torch.agent import Agent
+from picknplace.torch.ddpg.agent import DDPGAgent
+from picknplace.utils.mpi_torch import mpi_avg_grad
 
 
 class TD3Agent(Agent):

@@ -1,9 +1,9 @@
 import torch
 from torch.optim import Adam
-from pdrl.utils.constants import device
-from pdrl.torch.ddpg_rnd.network import TargetRandomNetwork
-from pdrl.torch.ddpg_rnd.network import Predictor
-from pdrl.utils.mpi_torch import mpi_avg_grad
+from picknplace.utils.constants import device
+from picknplace.torch.ddpg_rnd.network import TargetRandomNetwork
+from picknplace.torch.ddpg_rnd.network import Predictor
+from picknplace.utils.mpi_torch import mpi_avg_grad
 
 
 class RNDAgent:

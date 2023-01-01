@@ -1,7 +1,7 @@
-from pdrl.experiments.pick_and_place.achiever import FetchPickAndPlaceAchieverStep
-from pdrl.experiments.pick_and_place.subgoal import subgoal_generator_factory
-from pdrl.transform.pipeline import Pipeline
-from pdrl.experiments.pick_and_place.preprocess import RoboticsObservationTransformer
+from picknplace.experiments.pick_and_place.achiever import FetchPickAndPlaceAchieverStep
+from picknplace.experiments.pick_and_place.subgoal import subgoal_generator_factory
+from picknplace.transform.pipeline import Pipeline
+from picknplace.experiments.pick_and_place.preprocess import RoboticsObservationTransformer
 
 
 def create_test_pipeline(configs):

@@ -1,7 +1,7 @@
 import logging
 import numpy as np
 import torch
-from pdrl.utils.constants import device
+from picknplace.utils.constants import device
 
 
 logger = logging.getLogger()

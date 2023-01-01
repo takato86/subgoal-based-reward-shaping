@@ -1,10 +1,10 @@
 import logging
 import shaper
 from shaper.aggregator.subgoal_based import DynamicTrajectoryAggregation
-from pdrl.transform.pipeline import Step
-from pdrl.experiments.pick_and_place.subgoal import subgoal_generator_factory
-from pdrl.experiments.pick_and_place.is_success import is_success, is_success4sarsa_rs, is_success4dta
-from pdrl.experiments.pick_and_place.achiever import FetchPickAndPlaceAchiever
+from picknplace.transform.pipeline import Step
+from picknplace.experiments.pick_and_place.subgoal import subgoal_generator_factory
+from picknplace.experiments.pick_and_place.is_success import is_success, is_success4sarsa_rs, is_success4dta
+from picknplace.experiments.pick_and_place.achiever import FetchPickAndPlaceAchiever
 
 
 logger = logging.getLogger()

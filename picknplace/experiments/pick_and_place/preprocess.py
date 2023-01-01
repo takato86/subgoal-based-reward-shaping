@@ -1,5 +1,5 @@
 import numpy as np
-from pdrl.transform.pipeline import Step
+from picknplace.transform.pipeline import Step
 
 
 def trans_obs(obs):

@@ -1,6 +1,6 @@
-from pdrl.utils.mpi import num_procs, broadcast, mpi_avg
+from picknplace.utils.mpi import num_procs, broadcast, mpi_avg
 import torch
-from pdrl.utils.constants import device
+from picknplace.utils.constants import device
 
 
 def mpi_avg_grad(module):

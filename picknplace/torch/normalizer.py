@@ -1,6 +1,6 @@
 import numpy as np
-from pdrl.utils.mpi import mpi_sum, num_procs
-from pdrl.utils.constants import device
+from picknplace.utils.mpi import mpi_sum, num_procs
+from picknplace.utils.constants import device
 import torch
 
 
