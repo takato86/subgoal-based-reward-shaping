@@ -10,8 +10,8 @@ import os
 from statistics import mean
 
 from main import load_subgoals
-from src.agents.factory import create_agent
-from src.agents.hypara_opts import HYPERPARAMS_SAMPLER
+from fourroom.src.agents.factory import create_agent
+from fourroom.src.agents.hypara_opts import HYPERPARAMS_SAMPLER
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()

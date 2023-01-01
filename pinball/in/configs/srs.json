@@ -2,7 +2,7 @@
     "setting": {
         "visual": false,
         "seed": 0,
-        "out_dir": "out/srs_human_v3",
+        "out_dir": "pinball/out/srs_human_v3",
         "nepisodes": 250,
         "nruns": 100,
         "parallel": true,
@@ -24,6 +24,6 @@
     "shaping":{
         "range": 0.04,
         "eta": 1000,
-        "subg_path": "in/subgoals/human_subgoals.csv"
+        "subg_path": "pinball/in/subgoals/human_subgoals.csv"
     }
 }

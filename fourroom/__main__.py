@@ -11,8 +11,8 @@ import json
 import time
 import argparse
 from tqdm import tqdm
-from src.agents.factory import create_agent
-from src.config import config
+from fourroom.src.agents.factory import create_agent
+from fourroom.src.config import config
 from concurrent.futures import ProcessPoolExecutor
 from pyvirtualdisplay import Display
 

@@ -3,7 +3,7 @@ import os
 import logging
 from scipy.special import logsumexp
 
-from src.fourier import FourierBasis
+from pinball.src.fourier import FourierBasis
 
 logger = logging.getLogger(__name__)
 

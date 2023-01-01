@@ -1,6 +1,6 @@
 import shaper
-from src.agents.shaped import ShapedAgent
-from src.achievers import PinballAchiever
+from pinball.src.agents.shaped import ShapedAgent
+from pinball.src.achievers import PinballAchiever
 
 
 class SPRSAgent(ShapedAgent):

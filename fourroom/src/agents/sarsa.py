@@ -1,7 +1,7 @@
 import numpy as np
 import logging
-from src.policies import SoftmaxPolicy
-from src.tabulars import Tabular
+from fourroom.src.policies import SoftmaxPolicy
+from fourroom.src.tabulars import Tabular
 
 
 logger = logging.getLogger(__name__)

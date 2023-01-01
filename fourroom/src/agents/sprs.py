@@ -1,8 +1,8 @@
 import logging
 import shaper
-from src.agents.dta import is_success
-from src.agents.shaped import ShapedAgent
-from src.achievers import RoomsAchiever
+from fourroom.src.agents.dta import is_success
+from fourroom.src.agents.shaped import ShapedAgent
+from fourroom.src.achievers import RoomsAchiever
 
 logger = logging.getLogger(__name__)
 

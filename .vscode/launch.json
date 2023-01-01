@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "fourroom",
+            "type": "python",
+            "request": "launch",
+            "module": "fourroom",
+            "justMyCode": true,
+            "args": [
+                "--config", "fourroom/in/configs/sarsa.ini"
+            ]
+        },
+        {
+            "name": "pinball",
+            "type": "python",
+            "request": "launch",
+            "module": "pinball",
+            "justMyCode": true,
+            "args": [
+                "--config", "pinball/in/configs/actor_critic.json"
+            ]
+        },
+        {
+            "name": "picknplace",
+            "type": "python",
+            "request": "launch",
+            "module": "picknplace",
+            "justMyCode": true,
+            "args": [
+                "--config", "in/configs/actor_critic.ini"
+            ]
+        }
+    ]
+}

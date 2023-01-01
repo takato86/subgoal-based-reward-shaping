@@ -1,7 +1,7 @@
 import shaper
 from shaper.aggregator.subgoal_based import DynamicTrajectoryAggregation
-from src.achievers import PinballAchiever
-from src.agents.shaped import ShapedAgent
+from pinball.src.achievers import PinballAchiever
+from pinball.src.agents.shaped import ShapedAgent
 
 
 class DTAAgent(ShapedAgent):

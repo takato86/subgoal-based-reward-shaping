@@ -1,7 +1,7 @@
 import shaper
 from shaper.aggregator.subgoal_based import DynamicTrajectoryAggregation, DynamicStateAggregation
-from src.agents.shaped import ShapedAgent
-from src.achievers import RoomsAchiever, RoomsTransiter
+from fourroom.src.agents.shaped import ShapedAgent
+from fourroom.src.achievers import RoomsAchiever, RoomsTransiter
 
 
 class DTAAgent(ShapedAgent):

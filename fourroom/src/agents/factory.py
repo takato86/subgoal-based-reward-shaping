@@ -1,9 +1,9 @@
-from src.agents.sarsa import SarsaAgent
-from src.agents.dta import DTAAgent, PartiallyDTAAgent
-from src.agents.srs import SRSAgent, PartiallySRSAgent
-from src.agents.naive import NaiveRSAgent
-from src.agents.naive import LinearNaiveRSAgent
-from src.agents.sprs import SPRSAgent
+from fourroom.src.agents.sarsa import SarsaAgent
+from fourroom.src.agents.dta import DTAAgent, PartiallyDTAAgent
+from fourroom.src.agents.srs import SRSAgent, PartiallySRSAgent
+from fourroom.src.agents.naive import NaiveRSAgent
+from fourroom.src.agents.naive import LinearNaiveRSAgent
+from fourroom.src.agents.sprs import SPRSAgent
 
 
 agent_dicts = {

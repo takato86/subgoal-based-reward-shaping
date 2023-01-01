@@ -1,8 +1,8 @@
-from src.agents.actor_critic import ActorCriticAgent
-from src.agents.srs import SRSAgent
-from src.agents.dta import DTAAgent
-from src.agents.naive import LinearNaiveRSAgent, NaiveRSAgent
-from src.agents.sprs import SPRSAgent
+from pinball.src.agents.actor_critic import ActorCriticAgent
+from pinball.src.agents.srs import SRSAgent
+from pinball.src.agents.dta import DTAAgent
+from pinball.src.agents.naive import LinearNaiveRSAgent, NaiveRSAgent
+from pinball.src.agents.sprs import SPRSAgent
 
 
 agent_dicts = {

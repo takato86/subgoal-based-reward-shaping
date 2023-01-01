@@ -11,8 +11,8 @@ import pandas as pd
 import itertools
 import gym_pinball
 from tqdm import tqdm
-from src.agents.factory import create_agent
-from visualizer import Visualizer
+from pinball.src.agents.factory import create_agent
+from pinball.visualizer import Visualizer
 from concurrent.futures import ProcessPoolExecutor
 from pyvirtualdisplay import Display
 
@@ -107,7 +107,7 @@ def learning_loop(args):
     logger.debug(f"start run {run}")
     subg_confs = list(itertools.chain.from_iterable(subgoals))
     config["setting"]["seed"] = run
-    env = gym.make(config["env"]["id"], subg_confs=subg_confs)
+    env = gym.make(config["env"]["id"])
     env.seed(config["setting"]["seed"])
     env = wrappers.Monitor(env, directory=d_kinds["mv"], force=True)
     agent = create_agent(config, env, subgoals)
