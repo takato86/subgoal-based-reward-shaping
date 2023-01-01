@@ -47,9 +47,9 @@ def train(env_fn, configs):
     }
 
     if configs["debug"]:
-        dir_path = "picknplace/runs/debug"
+        dir_path = "picknplace/out/debug"
     else:
-        dir_path = "picknplace/runs/train"
+        dir_path = "picknplace/out/train"
 
     start_at = datetime.now()
 

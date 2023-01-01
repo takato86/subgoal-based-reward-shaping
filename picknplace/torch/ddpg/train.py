@@ -48,7 +48,7 @@ def train(env_fn, configs):
         "video": False
     }
 
-    dir_path = "picknplace/runs/train"
+    dir_path = "picknplace/out/train"
     start_at = datetime.now()
 
     for t in range(n_runs):

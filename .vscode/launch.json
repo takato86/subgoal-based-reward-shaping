@@ -31,7 +31,7 @@
             "module": "picknplace",
             "justMyCode": true,
             "args": [
-                "--config", "picknplace/in/configs/actor_critic.ini"
+                "--config", "picknplace/in/configs/dta/config.json"
             ]
         }
     ]

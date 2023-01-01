@@ -79,7 +79,7 @@ def optimize_hyparams(env_fn, configs):
             "pipeline": pipeline,
             "test_pipeline": test_pipeline,
             "replay_buffer_fn": replay_buffer_fn,
-            "logdir": "picknplace/runs/optimize/" + str(datetime.now()),
+            "logdir": "picknplace/out/optimize/" + str(datetime.now()),
             "norm_clip": configs["agent_params"]["norm_clip"],
             "norm_eps": configs["agent_params"]["norm_eps"],
             "clip_return": configs["agent_params"]["clip_return"],
